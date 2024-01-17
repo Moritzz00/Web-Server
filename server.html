@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meine einfache Website</title>
+</head>
+<body>
+  <h1>Willkommen auf meiner Website!</h1>
+  <p>Die Gesamtzahl der Aufrufe beträgt:</p>
+  <h2 id="aufrufe">0</h2>
+
+  <script>
+    // Initialisiere die Zählvariable
+    let aufrufe = 0;
+
+    // Hole den aktuell gespeicherten Wert aus dem lokalen Speicher (falls vorhanden)
+    if (localStorage.getItem('aufrufe')) {
+      aufrufe = parseInt(localStorage.getItem('aufrufe'));
+    }
+
+    // Erhöhe den Zähler um 1
+    aufrufe++;
+
+    // Speichere den neuen Wert im lokalen Speicher
+    localStorage.setItem('aufrufe', aufrufe);
+
+    // Aktualisiere den angezeigten Wert auf der Seite
+    document.getElementById('aufrufe').textContent = aufrufe;
+  </script>
+</body>
+</html>
